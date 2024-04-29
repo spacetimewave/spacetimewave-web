@@ -90,8 +90,9 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     ```console
     {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "prettier.configPath": "",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
     ```
 
@@ -99,29 +100,37 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     ```console
     $ pnpm create @eslint/config
-    √ How would you like to use ESLint? · style
+    √ How would you like to use ESLint? · problems
     √ What type of modules does your project use? · esm
-    √ Which framework does your project use? · none
-    √ Does your project use TypeScript? · No / Yes
+    √ Which framework does your project use? · react
+    √ Does your project use TypeScript? · typescript
     √ Where does your code run? · browser
-    √ How would you like to define a style for your project? · guide
-    √ Which style guide do you want to follow? · standard-with-typescript
-    √ What format do you want your config file to be in? · JSON
 
     The config that you've selected requires the following dependencies:
 
-    eslint-config-standard-with-typescript@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint@^8.0.1 eslint-plugin-import@^2.25.2 eslint-plugin-n@^15.0.0 || ^16.0.0  eslint-plugin-promise@^6.0.0 typescript@*
+    globals, @eslint/js, typescript-eslint, eslint-plugin-react, eslint
     √ Would you like to install them now? · No / Yes
     √ Which package manager do you want to use? · pnpm
     ```
 
-11. Install `eslint-config-prettier` to turn-off eslint rules that are unnecessary or might conflict with Prettier. Install `eslint-config-prettier` to run Prettier as an Eslint-rule.
+11. Remove ESLint configuration file (.eslintrc.cjs) created by Vite. We are going to use eslint.config.js file created with the previous command.
+
+12. If you use VSCode IDE, install `ESLint` extension. Then, add to _.vscode/settings.json_ the following settings to set ESLint as default linter.
+
+    ```console
+    {
+        ...
+        "eslint.format.enable": true
+    }
+    ```
+
+13. Install `eslint-config-prettier` to turn-off eslint rules that are unnecessary or might conflict with Prettier. Install `eslint-config-prettier` to run Prettier as an Eslint-rule.
 
     ```console
     $ pnpm add -D eslint-config-prettier eslint-plugin-prettier
     ```
 
-12. Add unit tests. We will need to install the following development dependencies.
+14. Add unit tests. We will need to install the following development dependencies.
 
     ```console
     $ pnpm add -D jest @types/jest ts-jest ts-node
@@ -136,7 +145,7 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Add `jest.config.ts` file with the testing configuration. And finally add your test-suite to the project.
 
-13. Add commit lint and pre-commit hooks.
+15. Add commit lint and pre-commit hooks.
 
     ```console
     pnpm add -D @commitlint/cli @commitlint/config-conventional
@@ -146,7 +155,7 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Add `.lintstagedrc` file with the linting and formating configuration
 
-14. Install git commit hooks and create a pre-commit hook file
+16. Install git commit hooks and create a pre-commit hook file
 
     ```console
     $ pnpm husky init
@@ -154,9 +163,9 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Edit the pre-commit commands inside the `.husky/pre-commit` file. Add lint staged and testing to automatically execute them before commiting changes.
 
-15. Add `.husky/commit-msg` hook to lint commit messages
+17. Add `.husky/commit-msg` hook to lint commit messages
 
-16. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
+18. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
 
 ```console
 git commit -m "feat(scope): msg"
