@@ -1,10 +1,10 @@
 # Configuration
 
-This configuration is intended for experienced developers who want to create a project from scratch with a configuration similar to `trustnet-engine`. To contribute, please follow the guidelines outlined in the [CONTRIBUTING.md](https://github.com/spacetimewave/trustnet-engine/blob/main/CONTRIBUTING.md) file.
+This configuration is intended for experienced developers who want to create a project from scratch with a configuration similar to `spacetimewave-web`. To contribute, please follow the guidelines outlined in the [CONTRIBUTING.md](https://github.com/spacetimewave/trustnet-engine/blob/main/CONTRIBUTING.md) file.
 
 ### Technologies
 
-The following technologies were used to create `trustnet-engine`.
+The following technologies were used to create `spacetimewave-web`.
 
 | Technology               | Feature                     |
 | ------------------------ | --------------------------- |
@@ -26,7 +26,7 @@ The following technologies were used to create `trustnet-engine`.
 
 ### Configuration
 
-These are the steps to follow to configure the technologies used by `trustnet-engine`.
+These are the steps to follow to configure the technologies used by `spacetimewave-web`.
 
 1.  Install NodeJS v16.x.x or greater
 
@@ -279,7 +279,14 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     pnpm -- commitlint --edit ${1}
     ```
 
-23. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
+23. Add a `CONTRIBUTING.md` file with the contributing instructions.
+
+24. Optionally, add a `LICENSE` file with your project license.
+25. Optionally, add a `AUTHORS` file with the authors of the project.
+
+26. Add a `CHANGELOG.md` file with the version changes every time a new build of the package is published.
+
+27. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
 
 ```console
 git commit -m "feat(scope): msg"
