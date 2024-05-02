@@ -247,7 +247,6 @@ These are the steps to follow to configure the technologies used by `spacetimewa
     {
         "*.{js,jsx,ts,tsx}" :[
             "prettier --write",
-            "eslint --fix",
             "eslint"
         ],
         "*.json":[
