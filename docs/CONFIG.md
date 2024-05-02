@@ -49,14 +49,20 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     $ pnpm update
     ```
 
-4.  Create a new git repository
+4.  Execute `pnpm run dev` to start the application
+
+    ```console
+    $ pnpm run dev
+    ```
+
+5.  Create a new git repository
 
     ```console
     $ git init
     $ git switch -c main
     ```
 
-5.  Authenticate with GitHub using SSH (step 4.1) or Github CLI (step 4.2):
+6.  Authenticate with GitHub using SSH (step 4.1) or Github CLI (step 4.2):
 
     4.1. Generate a SSH key, and add it to SSH and GitHub.
 
@@ -72,21 +78,21 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     ? How would you like to authenticate GitHub CLI? Login with a web browser
     ```
 
-6.  Create a new GitHub repository and add the origin remote repository
+7.  Create a new GitHub repository and add the origin remote repository
 
     ```console
     git remote add origin <github-repository>
     ```
 
-7.  Install Prettier formatter as development dependency.
+8.  Install Prettier formatter as development dependency.
 
     ```console
     $ pnpm add -D prettier
     ```
 
-8.  Add `prettierrc.json` configuration and `.prettierignore`
+9.  Add `prettierrc.json` configuration and `.prettierignore`
 
-9.  If you use VSCode IDE, install `Prettier - Code formatter` extension. Then, add to _.vscode/settings.json_ the following settings to set Prettier as default formater when saving files.
+10. If you use VSCode IDE, install `Prettier - Code formatter` extension. Then, add to _.vscode/settings.json_ the following settings to set Prettier as default formater when saving files.
 
     ```console
     {
@@ -96,7 +102,23 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     }
     ```
 
-10. Install ESLint linter as development dependency.
+11. Add to `package.json` the format command.
+
+    ```console
+        "format": "prettier --write .",
+    ```
+
+    Now you can execute `pnpm format` to execute prettier formatter.
+
+12. Remove ESLint configuration file (.eslintrc.cjs) created by Vite. We are going to use ESLint flat configuration.
+
+13. Install ESLint linter as development dependency:
+
+    ```console
+    $ pnpm add -D eslint
+    ```
+
+14. Create ESLint configuration file:
 
     ```console
     $ pnpm create @eslint/config
@@ -113,24 +135,47 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     √ Which package manager do you want to use? · pnpm
     ```
 
-11. Remove ESLint configuration file (.eslintrc.cjs) created by Vite. We are going to use eslint.config.js file created with the previous command.
+15. Add to `package.json` the lint command.
 
-12. If you use VSCode IDE, install `ESLint` extension. Then, add to _.vscode/settings.json_ the following settings to set ESLint as default linter.
+    ```console
+    	"lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
+    ```
+
+    Now you can execute `pnpm lint` to execute eslint linter.
+
+16. If you use VSCode IDE, install `ESLint` extension. Then, add to _.vscode/settings.json_ the following settings to set ESLint as default linter.
 
     ```console
     {
         ...
-        "eslint.format.enable": true
+        "eslint.enable": true,
+        "eslint.run": "onType",
+        "eslint.experimental.useFlatConfig": true
     }
     ```
 
-13. Install `eslint-config-prettier` to turn-off eslint rules that are unnecessary or might conflict with Prettier. Install `eslint-config-prettier` to run Prettier as an Eslint-rule.
+17. Also install `Error Lens`. This extension will show the linting errors on the exact line where the error occurs.
+
+18. Sometimes ESLint and Prettier rules may conflict. Although ESLint is deprecating formatting rules, conflicts will still appear until these rules are completely removed from ESLint. That's when `eslint-config-prettier` comes in. We will use eslint-config-prettier to avoid these conflicts. eslint-config-prettier provides rules that disable conflicting rules of eslint with prettier.
+
+    First, install `eslint-config-prettier` to disable eslint rules that are unnecessary and might conflict with your Prettier configuration.
 
     ```console
-    $ pnpm add -D eslint-config-prettier eslint-plugin-prettier
+    $ pnpm add -D eslint-config-prettier
     ```
 
-14. Add unit tests. We will need to install the following development dependencies.
+    Finally, add the extension to `eslint.config.js` file.
+
+    ```console
+    import eslintConfigPrettier from 'eslint-config-prettier'
+
+    export default [
+        ...
+        eslintConfigPrettier,
+    ]
+    ```
+
+19. Add unit tests. We will need to install the following development dependencies.
 
     ```console
     $ pnpm add -D jest @types/jest ts-jest ts-node
@@ -145,7 +190,7 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Add `jest.config.ts` file with the testing configuration. And finally add your test-suite to the project.
 
-15. Add commit lint and pre-commit hooks.
+20. Add commit lint and pre-commit hooks.
 
     ```console
     pnpm add -D @commitlint/cli @commitlint/config-conventional
@@ -155,7 +200,7 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Add `.lintstagedrc` file with the linting and formating configuration
 
-16. Install git commit hooks and create a pre-commit hook file
+21. Install git commit hooks and create a pre-commit hook file
 
     ```console
     $ pnpm husky init
@@ -163,9 +208,9 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Edit the pre-commit commands inside the `.husky/pre-commit` file. Add lint staged and testing to automatically execute them before commiting changes.
 
-17. Add `.husky/commit-msg` hook to lint commit messages
+22. Add `.husky/commit-msg` hook to lint commit messages
 
-18. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
+23. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
 
 ```console
 git commit -m "feat(scope): msg"
