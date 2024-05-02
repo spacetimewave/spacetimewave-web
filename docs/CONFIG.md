@@ -175,7 +175,54 @@ These are the steps to follow to configure the technologies used by `spacetimewa
     ]
     ```
 
-19. Add unit tests. We will need to install the following development dependencies.
+19. Add css linter by installing `stylelint`.
+
+    ```console
+    $ pnpm add stylelint -D
+    $ pnpm add stylelint-config-standard -D
+    ```
+
+    Now you can execute `create-stylelint` to add a stylelint configuration file.
+
+    ```console
+    $ pnpm dlx create-stylelint
+    ```
+
+    By default it will create a `.stylelintrc.json` file with the following content.
+
+    ```console
+    {
+        "extends": ["stylelint-config-standard"],
+        "rules": {
+            "at-rule-no-unknown": [
+                true,
+                {
+                    "ignoreAtRules": ["tailwind"]
+                }
+            ]
+        }
+    }
+    ```
+
+    Add to package.json file the following commands.
+
+    ```console
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "format:css": "stylelint --fix \"src/**/*.css\"",
+    ```
+
+20. If you use VSCode IDE, install `Stylelint` extension. Then, add to _.vscode/settings.json_ the following settings to set Stylelint as VSCode default linter.
+
+    ```console
+    {
+        ...
+        /* CSS */
+        "css.validate": false /* Disable CSS VSCode Linter to use Stylelint */,
+        "stylelint.validate": ["css"]
+    }
+    ```
+
+21. Add unit tests. We will need to install the following development dependencies.
 
     ```console
     $ pnpm add -D jest @types/jest ts-jest ts-node
@@ -233,7 +280,7 @@ These are the steps to follow to configure the technologies used by `spacetimewa
 
     Finally, add the coverage folder resulting from running `jest --coverage` to .gitignore.
 
-20. Add commit lint and pre-commit hooks.
+22. Add commit lint and pre-commit hooks.
 
     ```console
     pnpm add -D @commitlint/cli @commitlint/config-conventional
@@ -264,7 +311,7 @@ These are the steps to follow to configure the technologies used by `spacetimewa
     }
     ```
 
-21. Install git commit hooks and create a pre-commit hook file
+23. Install git commit hooks and create a pre-commit hook file
 
     ```console
     $ pnpm husky init
@@ -272,20 +319,20 @@ These are the steps to follow to configure the technologies used by `spacetimewa
 
     Edit the pre-commit commands inside the `.husky/pre-commit` file. Add lint staged and testing to automatically execute them before commiting changes.
 
-22. Add `.husky/commit-msg` hook to lint commit messages. Add commitlint command to commit-msg file.
+24. Add `.husky/commit-msg` hook to lint commit messages. Add commitlint command to commit-msg file.
 
     ```console
     pnpm -- commitlint --edit ${1}
     ```
 
-23. Add a `CONTRIBUTING.md` file with the contributing instructions.
+25. Add a `CONTRIBUTING.md` file with the contributing instructions.
 
-24. Optionally, add a `LICENSE` file with your project license.
-25. Optionally, add a `AUTHORS` file with the authors of the project.
+26. Optionally, add a `LICENSE` file with your project license.
+27. Optionally, add a `AUTHORS` file with the authors of the project.
 
-26. Add a `CHANGELOG.md` file with the version changes every time a new build of the package is published.
+28. Add a `CHANGELOG.md` file with the version changes every time a new build of the package is published.
 
-27. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
+29. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
 
 ```console
 git commit -m "feat(scope): msg"
