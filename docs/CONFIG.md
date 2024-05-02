@@ -263,7 +263,6 @@ These are the steps to follow to configure the technologies used by `trustnet-en
         ...
         "lint-staged": "lint-staged --concurrent false",
     }
-
     ```
 
 21. Install git commit hooks and create a pre-commit hook file
@@ -274,7 +273,11 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Edit the pre-commit commands inside the `.husky/pre-commit` file. Add lint staged and testing to automatically execute them before commiting changes.
 
-22. Add `.husky/commit-msg` hook to lint commit messages
+22. Add `.husky/commit-msg` hook to lint commit messages. Add commitlint command to commit-msg file.
+
+    ```console
+    pnpm -- commitlint --edit ${1}
+    ```
 
 23. Finally, commit your changes and upload your code to GitHub by executing the following commands or more advanced git commands:
 
