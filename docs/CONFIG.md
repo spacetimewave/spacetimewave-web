@@ -190,6 +190,37 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Add `jest.config.ts` file with the testing configuration. And finally add your test-suite to the project.
 
+    ```console
+        export default {
+        preset: 'ts-jest',
+        testEnvironment: 'node',
+        moduleNameMapper: {
+            '^src/(.*)$': '<rootDir>/src/$1',
+        },
+        modulePathIgnorePatterns: ['./dist/'],
+        coveragePathIgnorePatterns: [],
+        collectCoverageFrom: [
+            './src/**/*.ts',
+            './src/**/*.tsx',
+            '!./src/**/*.test.ts',
+        ],
+        coverageThreshold: {},
+
+        }
+    ```
+
+    Add test files naming them like `*.test.ts`. Add unit tests to the test suites.
+
+    ```console
+    describe('Test Suite', () => {
+        it('Unit Test', async () => {
+            expect(await function(param)).toEqual(
+                expectedOutput,
+            )
+        })
+    })
+    ```
+
 20. Add commit lint and pre-commit hooks.
 
     ```console
