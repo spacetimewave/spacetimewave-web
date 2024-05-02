@@ -221,6 +221,16 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     })
     ```
 
+    Add test commands to package.json. We will add the --passWithNoTests option since there are no tests yet. But it's recommended to remove it as soon as you have some tests.
+
+    ```console
+    "scripts": {
+        ...
+        "test": "jest",
+        "test:coverage": "jest --coverage --passWithNoTests",
+    }
+    ```
+
 20. Add commit lint and pre-commit hooks.
 
     ```console
@@ -242,6 +252,16 @@ These are the steps to follow to configure the technologies used by `trustnet-en
             "prettier --write"
         ]
     }
+    ```
+
+    Add lint-staged commands to package.json
+
+    ```console
+    "scripts": {
+        ...
+        "lint-staged": "lint-staged --concurrent false",
+    }
+
     ```
 
 21. Install git commit hooks and create a pre-commit hook file
