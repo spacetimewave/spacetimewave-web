@@ -231,6 +231,19 @@ These are the steps to follow to configure the technologies used by `trustnet-en
 
     Add `.lintstagedrc` file with the linting and formating configuration
 
+    ```console
+    {
+        "*.{js,jsx,ts,tsx}" :[
+            "prettier --write",
+            "eslint --fix",
+            "eslint"
+        ],
+        "*.json":[
+            "prettier --write"
+        ]
+    }
+    ```
+
 21. Install git commit hooks and create a pre-commit hook file
 
     ```console
