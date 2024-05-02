@@ -292,3 +292,30 @@ These are the steps to follow to configure the technologies used by `spacetimewa
 git commit -m "feat(scope): msg"
 git push -u origin main
 ```
+
+27. Add Shadcn component library:
+
+    27.1. Add Tailwind:
+
+    ```console
+    pnpm add -D tailwindcss postcss autoprefixer
+    ```
+
+    27.2. Initialize Tailwind configuration:
+
+    ```console
+    npx tailwindcss init -p
+    ```
+
+    27.3. Add non-relative module names resolution.
+
+    ```console
+    "compilerOptions": {
+        ...
+        /* Non-relative module names resolution*/
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    }
+    ```
