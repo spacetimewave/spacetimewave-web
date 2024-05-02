@@ -293,21 +293,21 @@ git commit -m "feat(scope): msg"
 git push -u origin main
 ```
 
-27. Add Shadcn component library:
+28. Add Shadcn component library:
 
-    27.1. Add Tailwind:
+    i. Add Tailwind:
 
     ```console
     pnpm add -D tailwindcss postcss autoprefixer
     ```
 
-    27.2. Initialize Tailwind configuration:
+    ii. Initialize Tailwind configuration:
 
     ```console
     npx tailwindcss init -p
     ```
 
-    27.3. Add non-relative module names resolution.
+    iii. Add non-relative module names resolution.
 
     ```console
     "compilerOptions": {
@@ -318,4 +318,27 @@ git push -u origin main
             "@/*": ["./src/*"]
         }
     }
+    ```
+
+    iv. Add the following code to the vite.config.ts so your app can resolve paths without error.
+
+    ```console
+    # (so you can import "path" without error)
+    pnpm add -D @types/node
+    ```
+
+    ```console
+    import path from "path"
+
+    import react from "@vitejs/plugin-react"
+    import { defineConfig } from "vite"
+
+    export default defineConfig({
+        plugins: [react()],
+        resolve: {
+            alias: {
+                "@": path.resolve(__dirname, "./src"),
+            },
+        },
+    })
     ```
