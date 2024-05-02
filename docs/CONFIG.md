@@ -231,6 +231,8 @@ These are the steps to follow to configure the technologies used by `trustnet-en
     }
     ```
 
+    Finally, add the coverage folder resulting from running `jest --coverage` to .gitignore.
+
 20. Add commit lint and pre-commit hooks.
 
     ```console
