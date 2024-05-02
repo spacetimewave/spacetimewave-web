@@ -342,3 +342,47 @@ git push -u origin main
         },
     })
     ```
+
+    v. Run the shadcn-ui init command to setup your Shadcn project:
+
+    ```console
+    $ pnpm dlx shadcn-ui@latest init
+
+    √ Would you like to use TypeScript (recommended)? ... no / yes
+    √ Which style would you like to use? » Default
+    √ Which color would you like to use as base color? » Slate
+    √ Where is your global CSS file? ... src/index.css
+    √ Would you like to use CSS variables for colors? ... no / yes
+    √ Are you using a custom tailwind prefix eg. tw-? (Leave blank if not) ...
+    √ Where is your tailwind.config.js located? ... tailwind.config.js
+    √ Configure the import alias for components: ... @/components
+    √ Configure the import alias for utils: ... @/lib/utils
+    √ Are you using React Server Components? ... no / yes
+    √ Write configuration to components.json. Proceed? ... yes
+
+    ✔ Writing components.json...
+    ✔ Initializing project...
+    ✔ Installing dependencies...
+
+    Success! Project initialization completed. You may now add components.
+    ```
+
+    vi. Now you can add components to your project using the following command:
+
+    ```console
+    $ pnpm dlx shadcn-ui@latest add button
+    ```
+
+    vi. Finally you can use those components in your React application
+
+    ```console
+    import { Button } from "@/components/ui/button"
+
+    export default function Home() {
+    return (
+        <div>
+        <Button>Click me</Button>
+        </div>
+    )
+    }
+    ```
