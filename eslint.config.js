@@ -7,6 +7,7 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 pluginReactConfig.rules = {
 	...pluginReactConfig.rules,
 	'react/react-in-jsx-scope': 0,
+	'react/prop-types': 'off',
 }
 
 export default [
