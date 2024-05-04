@@ -4,6 +4,11 @@ import tseslint from 'typescript-eslint'
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 
+pluginReactConfig.rules = {
+	...pluginReactConfig.rules,
+	'react/react-in-jsx-scope': 0,
+}
+
 export default [
 	{ languageOptions: { globals: globals.browser } },
 	pluginJs.configs.recommended,
