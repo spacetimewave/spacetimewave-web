@@ -1,0 +1,7 @@
+.bg-light-mode {
+	background-image: url('../../assets/background.jpg');
+}
+
+.bg-dark-mode {
+	background-image: url('../../assets/background-inverted.jpg');
+}
