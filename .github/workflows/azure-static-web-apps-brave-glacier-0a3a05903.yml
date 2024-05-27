@@ -30,7 +30,7 @@ jobs:
       - name: Build project
         run: pnpm build
       - name: Install Azure Static Web Apps CLI
-        run: npm install -g @azure/static-web-apps-cli
+        run: pnpm add -g @azure/static-web-apps-cli
       - name: Deploy to Azure Static Web Apps
         env:
           AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_GLACIER_0A3A05903 }}
