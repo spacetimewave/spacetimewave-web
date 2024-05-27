@@ -15,7 +15,7 @@
 		"test:coverage": "jest --coverage --passWithNoTests",
 		"preview": "vite preview",
 		"prepare": "husky",
-		"deploy": "pnpm dlx @azure/static-web-apps-cli deploy ./dist --api-token $AZURE_STATIC_WEB_APPS_API_TOKEN --env production"
+		"deploy": "AZURE_STATIC_WEB_APPS_API_TOKEN=$AZURE_STATIC_WEB_APPS_API_TOKEN pnpm dlx @azure/static-web-apps-cli deploy ./dist --api-token $AZURE_STATIC_WEB_APPS_API_TOKEN --env production"
 	},
 	"dependencies": {
 		"@radix-ui/react-dropdown-menu": "^2.0.6",
