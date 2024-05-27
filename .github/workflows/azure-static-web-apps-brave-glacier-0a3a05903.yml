@@ -34,8 +34,7 @@ jobs:
       - name: Deploy to Azure Static Web Apps
         env:
           AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_GLACIER_0A3A05903 }}
-        run: |
-          pnpm dlx deploy ./dist --api-token $AZURE_STATIC_WEB_APPS_API_TOKEN --env production
+        run: pnpm run deploy
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
