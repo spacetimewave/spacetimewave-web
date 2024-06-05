@@ -33,7 +33,10 @@ export default function Home() {
 					<Button className='mx-1' variant='outline'>
 						Log in
 					</Button>
-					<Button className='mx-1' variant='outline'>
+					<Button
+						className='mx-1 text-white hover:text-white bg-blue-800 hover:bg-blue-900'
+						variant='outline'
+					>
 						Sign in
 					</Button>
 					<span className='mx-1'>
