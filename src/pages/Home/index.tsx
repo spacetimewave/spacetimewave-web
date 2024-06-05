@@ -163,7 +163,8 @@ export default function Home() {
 				<footer className='border-t border-gray-100 dark:border-gray-800'>
 					<div className='container flex items-center justify-between h-16 px-4 md:px-6'>
 						<div className='text-sm text-gray-500 dark:text-gray-400'>
-							&copy; 2024 spacetimewave Ltd. All rights reserved.
+							&copy; 2024 <span className='text-base'>spacetimewave</span> Ltd.
+							All rights reserved.
 						</div>
 						<nav className='flex items-center space-x-4'>
 							<Link
