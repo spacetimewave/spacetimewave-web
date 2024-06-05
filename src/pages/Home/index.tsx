@@ -23,48 +23,27 @@ export default function Home() {
 
 	return (
 		<>
-			<header className='flex items-center h-16 p-8 border-b'>
-				<Link className='flex items-center gap-2 mr-4' to='#'>
+			<nav className='flex items-center h-16 p-8 px-4 border-b justify-between w-screen'>
+				<Link className='flex items-center gap-2' to='#'>
 					<Icon />
-					<span className='font-light'>spacetimewave</span>
+					<span className='font-light hidden sm:inline'>spacetimewave</span>
 				</Link>
-				<nav className='hidden md:flex items-center space-x-4 flex-1'>
-					<Link className='font-thin' to='#'>
-						Home
-					</Link>
-					<Link className='font-thin' to='#'>
-						Services
-					</Link>
-					<Link className='font-thin' to='#'>
-						About
-					</Link>
-					<Link className='font-thin' to='#'>
-						Contact
-					</Link>
-				</nav>
-				<Button className='mx-1' variant='outline'>
-					Log in
-				</Button>
-				<Button className='mx-1' variant='outline'>
-					<span>Sign in</span>
-					<svg
-						className='w-3 h-3 fill-current shrink-0 ml-2 -mr-1'
-						viewBox='0 0 12 12'
-						xmlns='http://www.w3.org/2000/svg'
-					>
-						<path
-							d='M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z'
-							fillRule='nonzero'
-						/>
-					</svg>
-				</Button>
-				<span className='mx-1'>
-					<ModeToggle />
-				</span>
-			</header>
+
+				<div className='flex items-center ml-auto'>
+					<Button className='mx-1' variant='outline'>
+						Log in
+					</Button>
+					<Button className='mx-1' variant='outline'>
+						Sign in
+					</Button>
+					<span className='mx-1'>
+						<ModeToggle />
+					</span>
+				</div>
+			</nav>
 
 			<main
-				className={`flex justify-center bg-cover bg-center h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
+				className={`flex justify-center bg-cover bg-center w-screen h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
 				{/* Hero Section */}
 				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 md:grid-cols-2 items-center p-6'>
