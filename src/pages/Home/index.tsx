@@ -8,6 +8,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 
 import Icon from '@/components/icon'
+import HorizontalScrolling from '@/components/horizontal-swiper'
 
 export default function Home() {
 	const { theme } = useTheme()
@@ -79,6 +80,7 @@ export default function Home() {
 					</div>
 				</div>
 			</main>
+			<HorizontalScrolling />
 		</>
 	)
 }

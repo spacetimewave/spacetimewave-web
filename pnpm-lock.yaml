@@ -32,6 +32,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.23.0
     version: 6.23.0(react-dom@18.3.1)(react@18.3.1)
+  swiper:
+    specifier: ^11.1.4
+    version: 11.1.4
   tailwind-merge:
     specifier: ^2.3.0
     version: 2.3.0
@@ -5997,6 +6000,11 @@ packages:
   /svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
+
+  /swiper@11.1.4:
+    resolution: {integrity: sha512-1n7kbYJB2dFEpUHRFszq7gys/ofIBrMNibwTiMvPHwneKND/t9kImnHt6CfGPScMHgI+dWMbGTycCKGMoOO1KA==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
 
   /table@6.8.2:
     resolution: {integrity: sha512-w2sfv80nrAh2VCbqR5AK27wswXhqcck2AhfnNW76beQXskGZ1V12GwS//yYVa3d3fcvAip2OUnbDAjW2k3v9fA==}
