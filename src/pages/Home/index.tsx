@@ -137,7 +137,7 @@ export default function Home() {
 									width='300'
 									height='300'
 									alt='Team member'
-									className='mx-auto rounded-full overflow-hidden aspect-square object-cover object-center border border-gray-200 border-gray-200 dark:border-gray-800 dark:filter dark:brightness-90'
+									className='mx-auto rounded-full overflow-hidden aspect-square object-cover object-center border border-gray-200 dark:border-gray-800 dark:filter dark:brightness-90'
 								/>
 								<div className='space-y-1'>
 									<h3 className='text-xl font-semibold'>
