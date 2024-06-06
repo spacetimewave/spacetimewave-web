@@ -124,9 +124,15 @@ export default function Home() {
 										CEO
 									</p>
 									<div>
-										<TwitterIcon />
-										<LinkedinIcon />
-										<GithubIcon />
+										<Link to='https://x.com/javierhersan99/'>
+											<TwitterIcon />
+										</Link>
+										<Link to='https://www.linkedin.com/in/javierhersan/'>
+											<LinkedinIcon />
+										</Link>
+										<Link to='https://github.com/javierhersan/'>
+											<GithubIcon />
+										</Link>
 									</div>
 								</div>
 							</div>
