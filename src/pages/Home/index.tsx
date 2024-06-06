@@ -23,7 +23,7 @@ export default function Home() {
 
 	return (
 		<>
-			<nav className='flex items-center h-16 p-8 px-4 border-b justify-between w-screen'>
+			<nav className='flex items-center h-16 box-border p-8 border-b justify-between max-w-full'>
 				<Link className='flex items-center gap-2' to='#'>
 					<Icon />
 					<span className='font-light hidden sm:inline'>spacetimewave</span>
@@ -33,12 +33,7 @@ export default function Home() {
 					<Button className='mx-1' variant='outline'>
 						Log in
 					</Button>
-					<Button
-						className='mx-1 text-white hover:text-white bg-blue-800 hover:bg-blue-900'
-						variant='outline'
-					>
-						Sign in
-					</Button>
+					<Button className='mx-1'>Sign in</Button>
 					<span className='mx-1'>
 						<ModeToggle />
 					</span>
