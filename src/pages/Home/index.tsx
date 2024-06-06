@@ -41,7 +41,7 @@ export default function Home() {
 			</nav>
 
 			<main
-				className={`flex justify-center bg-cover bg-center w-screen h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
+				className={`flex justify-center bg-cover bg-center h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
 				{/* Hero Section */}
 				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 md:grid-cols-2 items-center p-6'>
