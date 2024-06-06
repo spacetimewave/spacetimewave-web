@@ -124,13 +124,25 @@ export default function Home() {
 										CEO
 									</p>
 									<div>
-										<Link to='https://x.com/javierhersan99/'>
+										<Link
+											to='https://x.com/javierhersan99/'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
 											<TwitterIcon />
 										</Link>
-										<Link to='https://www.linkedin.com/in/javierhersan/'>
+										<Link
+											to='https://www.linkedin.com/in/javierhersan/'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
 											<LinkedinIcon />
 										</Link>
-										<Link to='https://github.com/javierhersan/'>
+										<Link
+											to='https://github.com/javierhersan/'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
 											<GithubIcon />
 										</Link>
 									</div>
