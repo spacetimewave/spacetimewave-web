@@ -2,6 +2,7 @@ import './index.css'
 
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import { useTheme } from '@/components/theme-provider'
 import { ModeToggle } from '@/components/mode-toggle'
@@ -56,7 +57,25 @@ export default function Home() {
 					</div>
 					<div className='flex justify-center items-center p-4 '></div>
 				</div>
+				<div className='absolute bottom-24 lg:bottom-10 w-full flex justify-center items-center'>
+					<a href='#services'>
+						<div className='w-[35px] h-[64px] rounded-3xl border-4 border-french border-dim flex justify-center items-start p-2 border-black dark:border-white '>
+							<motion.div
+								animate={{
+									y: [0, 24, 0],
+								}}
+								transition={{
+									duration: 1.5,
+									repeat: Infinity,
+									repeatType: 'loop',
+								}}
+								className='w-3 h-3 rounded-full bg-black dark:bg-white mb-1'
+							/>
+						</div>
+					</a>
+				</div>
 			</main>
+			<span id='services'></span>
 			<HorizontalScrolling />
 
 			<div className='flex flex-col min-h-screen'>
