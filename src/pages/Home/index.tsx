@@ -44,22 +44,17 @@ export default function Home() {
 				className={`flex justify-center bg-cover bg-center h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
 				{/* Hero Section */}
-				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 md:grid-cols-2 items-center p-6'>
-					<div className='p-4 text-center md:text-left mx-auto'>
-						<h1 className='text-4xl font-bold mb-4 mx-auto md:mx-0 max-w-sm'>
-							We build your dream website and apps.
+				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 lg:grid-cols-2 items-center p-6'>
+					<div className='p-4 text-center lg:text-left mx-auto'>
+						<h1 className='text-4xl sm:text-6xl font-bold tracking-tighter mb-4 mx-auto md:mx-0 max-w-sm sm:max-w-lg sm:min-w-[32rem]'>
+							We build your dream application.
 						</h1>
-						<h3 className='text-xl mb-6'>
+						<h3 className='text-xl lg:text-2xl mb-6'>
 							Empowering businesses through technology.
 						</h3>
 						<Button>Contact us</Button> {/* Call to action */}
 					</div>
-					<div className='flex justify-center items-center p-4 '>
-						{/* <img
-							src={image}
-							className='w-full h-auto max-w-md md:max-w-6xl rounded-md shadow-lg'
-						></img> */}
-					</div>
+					<div className='flex justify-center items-center p-4 '></div>
 				</div>
 			</main>
 			<HorizontalScrolling />
