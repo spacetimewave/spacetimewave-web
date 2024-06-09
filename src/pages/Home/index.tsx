@@ -1,6 +1,5 @@
 import './index.css'
 
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -18,12 +17,10 @@ import GithubIcon from '@/components/icons/github'
 
 export default function Home() {
 	const { theme } = useTheme()
-	useEffect(() => {
-		console.log(theme)
-	}, [theme])
 
 	return (
 		<>
+			{/* Navbar */}
 			<nav className='flex items-center h-16 box-border p-8 border-b justify-between max-w-full'>
 				<Link className='flex items-center gap-2' to='#'>
 					<Icon />
@@ -41,10 +38,10 @@ export default function Home() {
 				</div>
 			</nav>
 
+			{/* Hero Section */}
 			<main
 				className={`flex justify-center bg-cover bg-center h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
-				{/* Hero Section */}
 				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 lg:grid-cols-2 items-center p-6'>
 					<div className='p-4 text-center lg:text-left mx-auto'>
 						<h1 className='text-4xl sm:text-6xl font-bold tracking-tighter mb-4 mx-auto md:mx-0 max-w-sm sm:max-w-lg sm:min-w-[32rem]'>
@@ -75,9 +72,12 @@ export default function Home() {
 					</a>
 				</div>
 			</main>
+
+			{/* Services Section */}
 			<span id='services'></span>
 			<HorizontalScrolling />
 
+			{/* About Section */}
 			<div className='flex flex-col min-h-screen'>
 				<main className='flex-1 bg-gray-100 py-12 md:py-24 dark:bg-gray-800'>
 					<div className='container space-y-12 px-4 md:px-6'>
@@ -187,6 +187,8 @@ export default function Home() {
 						</div>
 					</div>
 				</main>
+
+				{/* Footer Section */}
 				<footer className='border-t border-gray-100 dark:border-gray-800'>
 					<div className='container flex items-center justify-between h-16 px-4 md:px-6'>
 						<div className='text-sm text-gray-500 dark:text-gray-400'>
