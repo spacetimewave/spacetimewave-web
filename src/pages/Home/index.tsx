@@ -7,7 +7,7 @@ import { useTheme } from '@/components/theme-provider'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 
-import Icon from '@/components/icon'
+import SpacetimewaveIcon from '@/components/icons/spacetimewave'
 import HorizontalScrolling from '@/components/horizontal-swiper'
 
 import profilePicture from '@/assets/profile.jpg'
@@ -23,7 +23,7 @@ export default function Home() {
 			{/* Navbar */}
 			<nav className='flex items-center h-16 box-border p-8 border-b justify-between max-w-full'>
 				<Link className='flex items-center gap-2' to='#'>
-					<Icon />
+					<SpacetimewaveIcon />
 					<span className='font-light hidden sm:inline'>spacetimewave</span>
 				</Link>
 
