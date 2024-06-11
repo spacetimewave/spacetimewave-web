@@ -56,19 +56,35 @@ export default function HorizontalSwiper() {
 	return (
 		<>
 			<Swiper
-				slidesPerView={3}
-				spaceBetween={30}
+				className='pt-4 pb-6'
+				modules={[Pagination, Autoplay, Navigation]}
+				/* Leave this commented if you use breakpoints */
+				// slidesPerView={3}
+				// spaceBetween={30}
+
+				breakpoints={{
+					640: {
+						slidesPerView: 1,
+						spaceBetween: 10,
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					1024: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+				}}
+				navigation={true}
 				pagination={{
 					clickable: true,
 				}}
-				modules={[Pagination, Autoplay, Navigation]}
+				loop={true}
 				autoplay={{
 					delay: 2500,
 					disableOnInteraction: false,
 				}}
-				navigation={true}
-				loop={true}
-				className='pt-4 pb-6'
 			>
 				{services.map((service) => (
 					<SwiperSlide key={service.id}>
