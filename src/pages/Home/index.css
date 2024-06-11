@@ -5,3 +5,7 @@
 .bg-dark-mode {
 	background-image: url('../../assets/background-inverted.jpg');
 }
+
+html {
+	scroll-behavior: smooth;
+}

@@ -39,7 +39,7 @@ export default function Home() {
 			</nav>
 
 			{/* Hero Section */}
-			<main
+			<div
 				className={`flex justify-center bg-cover bg-center h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
 				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 lg:grid-cols-2 items-center p-6'>
@@ -55,7 +55,7 @@ export default function Home() {
 					<div className='flex justify-center items-center p-4 '></div>
 				</div>
 				<div className='absolute bottom-24 lg:bottom-10 w-full flex justify-center items-center'>
-					<a href='#services'>
+					<a href='#services' className=' scroll-smooth'>
 						<div className='w-[35px] h-[64px] rounded-3xl border-4 border-french border-dim flex justify-center items-start p-2 border-black dark:border-white '>
 							<motion.div
 								animate={{
@@ -71,7 +71,7 @@ export default function Home() {
 						</div>
 					</a>
 				</div>
-			</main>
+			</div>
 
 			{/* Services Section */}
 			<span id='services'></span>
