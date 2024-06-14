@@ -40,9 +40,9 @@ export default function Home() {
 
 			{/* Hero Section */}
 			<div
-				className={`flex justify-center bg-cover bg-center h-screen  ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
+				className={`flex flex-col justify-center bg-cover bg-center min-h-[calc(100vh-4rem-1px)] ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
-				<div className='flex-row min-h-[calc(100vh-4rem-1px)] grid grid-cols-1 lg:grid-cols-2 items-center p-6'>
+				<div className='flex-row grid grid-cols-1 lg:grid-cols-2 items-center p-6'>
 					<div className='p-4 text-center lg:text-left mx-auto'>
 						<h1 className='text-4xl sm:text-6xl font-bold tracking-tighter mb-4 mx-auto md:mx-0 max-w-sm sm:max-w-lg sm:min-w-[32rem]'>
 							We build your dream application.
@@ -52,9 +52,8 @@ export default function Home() {
 						</h3>
 						<Button>Contact us</Button> {/* Call to action */}
 					</div>
-					<div className='flex justify-center items-center p-4 '></div>
 				</div>
-				<div className='absolute bottom-24 lg:bottom-10 w-full flex justify-center items-center'>
+				<div className='flex-row w-full flex justify-center items-center pb-4'>
 					<a href='#services' className=' scroll-smooth'>
 						<div className='w-[35px] h-[64px] rounded-3xl border-4 border-french border-dim flex justify-center items-start p-2 border-black dark:border-white '>
 							<motion.div
