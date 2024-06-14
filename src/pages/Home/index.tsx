@@ -42,19 +42,19 @@ export default function Home() {
 			<div
 				className={`flex flex-col justify-center bg-cover bg-center min-h-[calc(100vh-4rem-1px)] ${theme != 'dark' ? 'bg-light-mode' : 'bg-dark-mode'}`}
 			>
-				<div className='flex-row grid grid-cols-1 lg:grid-cols-2 items-center p-6'>
-					<div className='p-4 text-center lg:text-left mx-auto'>
+				<div className='flex-row grid grid-cols-1 xl:grid-cols-2 items-center p-6'>
+					<div className='p-4 text-center xl:text-left mx-auto'>
 						<h1 className='text-4xl sm:text-6xl font-bold tracking-tighter mb-4 mx-auto md:mx-0 max-w-sm sm:max-w-lg sm:min-w-[32rem]'>
 							We build your dream application.
 						</h1>
-						<h3 className='text-xl lg:text-2xl mb-6'>
+						<h3 className='text-xl xl:text-2xl mb-6'>
 							Empowering businesses through technology.
 						</h3>
 						<Button>Contact us</Button> {/* Call to action */}
 					</div>
 				</div>
-				<div className='flex-row w-full flex justify-center items-center pb-4'>
-					<a href='#services' className=' scroll-smooth'>
+				<div className='flex-row w-full flex justify-center items-center mt-4'>
+					<a href='#services'>
 						<div className='w-[35px] h-[64px] rounded-3xl border-4 border-french border-dim flex justify-center items-start p-2 border-black dark:border-white '>
 							<motion.div
 								animate={{
