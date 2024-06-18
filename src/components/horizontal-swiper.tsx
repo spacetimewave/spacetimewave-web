@@ -1,54 +1,60 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card'
+import investment from '../assets/investment.jpg'
+import infrastructure from '../assets/infrastructure.jpg'
+import brain from '../assets/brain.jpg'
+import bigData from '../assets/big-data.jpg'
+import blockchain from '../assets/blockchain.jpg'
+import software from '../assets/software.jpg'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
+import SwiperCard from './swiper-card'
+import { IService } from '@/models/IService'
 
-const services = [
+const services: IService[] = [
 	{
 		id: 1,
 		title: 'Software',
 		description: 'Ad hoc software',
-		content: 'Card Content',
-		footer: 'Card Footer',
+		imageSrc: software,
+		brochureLink: '',
 	},
 	{
 		id: 2,
 		title: 'AI',
 		description: 'Artificial Intelligence',
-		content: 'Consulting Content',
-		footer: 'Consulting Footer',
+		imageSrc: brain,
+		brochureLink: '',
 	},
 	{
 		id: 3,
 		title: 'Blockchain',
 		description: '24/7 support services',
-		content: 'Support Content',
-		footer: 'Support Footer',
+		imageSrc: blockchain,
+		brochureLink: '',
 	},
 	{
 		id: 4,
 		title: 'Data',
 		description: 'Big Data, Analytics, and Visualization',
-		content: '',
-		footer: '',
+		imageSrc: bigData,
+		brochureLink: '',
 	},
 	{
 		id: 5,
 		title: 'Infrastructure',
 		description: 'Azure Cloud Infrastucture',
-		content: '',
-		footer: '',
+		imageSrc: infrastructure,
+		brochureLink: '',
+	},
+	{
+		id: 6,
+		title: 'Investment',
+		description: 'Azure Cloud Infrastucture',
+		imageSrc: investment,
+		brochureLink: '',
 	},
 ]
 
@@ -89,18 +95,7 @@ export default function HorizontalSwiper() {
 				{services.map((service) => (
 					<SwiperSlide key={service.id}>
 						<div className='p-4'>
-							<Card className='bg-secondary min-h-[40vh]'>
-								<CardHeader>
-									<CardTitle>{service.title}</CardTitle>
-									<CardDescription>{service.description}</CardDescription>
-								</CardHeader>
-								<CardContent>
-									<p>{service.content}</p>
-								</CardContent>
-								<CardFooter>
-									<p>{service.footer}</p>
-								</CardFooter>
-							</Card>
+							<SwiperCard service={service} />
 						</div>
 					</SwiperSlide>
 				))}
