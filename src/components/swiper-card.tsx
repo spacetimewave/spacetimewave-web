@@ -25,9 +25,8 @@ export default function SwiperCard({ service }: Props): JSX.Element {
 				</div>
 				<div className='flex justify-between items-center'>
 					<Button
-						as='a'
-						href={service.brochureLink}
-						download
+						// href={service.brochureLink}
+						// download
 						className='bg-gray-900 text-white hover:bg-gray-800 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-600 dark:focus:ring-offset-gray-800'
 					>
 						Download Brochure
