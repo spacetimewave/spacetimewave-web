@@ -50,7 +50,12 @@ export default function Home() {
 						<h3 className='text-xl xl:text-2xl mb-6'>
 							Empowering businesses through technology.
 						</h3>
-						<Button>Contact us</Button> {/* Call to action */}
+						<Link
+							to='mailto:info@spacetimewave.com'
+							style={{ textDecoration: 'none' }}
+						>
+							<Button>Contact us</Button>
+						</Link>
 					</div>
 				</div>
 				<div className='flex-row w-full flex justify-center items-center mt-4'>
