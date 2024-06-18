@@ -73,7 +73,7 @@ export default function Home() {
 			</div>
 
 			{/* Services Section */}
-			<span id='services'></span>
+			<span id='services' className='m-1'></span>
 			<HorizontalScrolling />
 
 			{/* About Section */}
@@ -134,7 +134,7 @@ export default function Home() {
 										Javier Hernández Sánchez
 									</h3>
 									<p className='text-sm text-gray-500 dark:text-gray-400'>
-										CEO
+										CEO and CTO
 									</p>
 									<div>
 										<Link
